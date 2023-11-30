@@ -1,12 +1,16 @@
-import {FC} from "react";
-import {AccordionTitle} from "./AccordionTitle";
 import {AccordionBody} from "./AccordionBody";
+import {AccordionTitle} from "./AccordionTitle";
 
-export const Accordion: FC = () => {
+type AccordionPropsType = {
+    title: string
+    collapsed: boolean
+}
+
+export const Accordion = (props: AccordionPropsType) => {
     return (
         <div className='accordion'>
-            <AccordionTitle/>
-            <AccordionBody />
+            <AccordionTitle title={props.title}/>
+            {!props.collapsed && <AccordionBody />}
         </div>
     )
 }

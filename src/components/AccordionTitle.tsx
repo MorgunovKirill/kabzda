@@ -1,7 +1,9 @@
-import {FC} from "react";
+type AccordionTitlePropsType = {
+    title: string
+}
 
-export const AccordionTitle: FC = () => {
+export const AccordionTitle = (props: AccordionTitlePropsType) => {
     return (
-        <h3>Accordion title</h3>
+        <h3>{props.title}</h3>
     )
 }

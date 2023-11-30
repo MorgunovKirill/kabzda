@@ -1,7 +1,15 @@
-import {FC} from "react";
+type StarPropsType = {
+    selected?: boolean
+}
 
-export const Star: FC = () => {
-    return (
-        <div>Star</div>
-    )
+export const Star = (props: StarPropsType) => {
+    if(props.selected) {
+        return (
+            <b>Star </b>
+        )
+    } else {
+        return (
+            <span>Star </span>
+        )
+    }
 }

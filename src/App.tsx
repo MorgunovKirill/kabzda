@@ -1,8 +1,10 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Accordion} from "./components/Accordion";
-import {Rating} from "./components/Rating";
+import {Accordion} from "./components/Accordion/Accordion";
+import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledAccordion} from "./components/UncontrolledAccordion/Accordion";
+import {UnControlledRating} from "./components/UnControlledRating/Rating";
 
 function App() {
     const [tumblerState, setTumblerState] = useState<boolean>(false)
@@ -10,9 +12,9 @@ function App() {
         <div className="App">
             <Accordion title={'First'} collapsed={true} />
             <Rating value={0} />
-            <Rating value={3} />
             <Accordion title={'Second'} collapsed={false} />
-            <Rating value={5} />
+            <UncontrolledAccordion title={'third'} />
+            <UnControlledRating />
             <OnOff value={tumblerState} setTumblerState={setTumblerState} />
         </div>
     );

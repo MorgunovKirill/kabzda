@@ -1,15 +1,12 @@
+import {FC} from "react";
+
 type StarPropsType = {
-    selected?: boolean
+    value: number,
+    selected?: boolean,
+    setRating: (value: number) => void,
 }
 
-export const Star = (props: StarPropsType) => {
-    if(props.selected) {
-        return (
-            <b>Star </b>
-        )
-    } else {
-        return (
-            <span>Star </span>
-        )
-    }
+export const Star: FC<StarPropsType> = ({value, selected, setRating}) => {
+    return selected ? <b onClick={() => setRating(value)}>Star </b> :
+        <span onClick={() => setRating(value)}>Star </span>;
 }

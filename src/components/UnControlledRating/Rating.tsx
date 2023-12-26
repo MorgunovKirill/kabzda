@@ -1,8 +1,10 @@
 import {Star} from "./Star";
 import {useState} from "react";
 
+export type RatingTypeValue =  0 | 1 | 2 | 3 | 4 | 5;
+
 export const UnControlledRating = () => {
-    const [rating, setRating] = useState<number>(0)
+    const [rating, setRating] = useState<RatingTypeValue>(0)
 
     return (
         <div>

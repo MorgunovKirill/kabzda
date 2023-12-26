@@ -8,11 +8,11 @@ import {UnControlledRating} from "./components/UnControlledRating/Rating";
 
 function App() {
     const [tumblerState, setTumblerState] = useState<boolean>(false)
+    const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     return (
         <div className="App">
-            <Accordion title={'First'} collapsed={true} />
-            <Rating value={0} />
-            <Accordion title={'Second'} collapsed={false} />
+            <Rating value={3} />
+            <Accordion title={'First'} collapsed={accordionCollapsed} setIsCollapsed={setAccordionCollapsed} />
             <UncontrolledAccordion title={'third'} />
             <UnControlledRating />
             <OnOff value={tumblerState} setTumblerState={setTumblerState} />

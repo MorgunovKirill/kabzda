@@ -1,10 +1,11 @@
 import {Star} from "./Star";
+import {RatingTypeValue} from "../UnControlledRating/Rating";
 
-type RatingPropsType = {
-    value: number
+type RatingPropsValue = {
+    value: RatingTypeValue
 }
 
-export const Rating = ({value}: RatingPropsType) => {
+export const Rating = ({value}: RatingPropsValue) => {
     return (
         <div>
             <Star selected={value >= 1}/>

@@ -1,9 +1,10 @@
 import {FC} from "react";
+import {RatingTypeValue} from "./Rating";
 
 type StarPropsType = {
-    value: number,
+    value: RatingTypeValue,
     selected?: boolean,
-    setRating: (value: number) => void,
+    setRating: (value: RatingTypeValue) => void,
 }
 
 export const Star: FC<StarPropsType> = ({value, selected, setRating}) => {

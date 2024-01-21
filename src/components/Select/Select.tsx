@@ -32,7 +32,7 @@ export const Select = (props: SelectPropsType) => {
         setIsActive(false);
     }
 
-    const onKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
+    const onKeyUp = (e: KeyboardEvent) => {
         if(e.key === 'ArrowDown' || e.key === 'ArrowUp') {
             for (let i = 0; i < props.items.length; i++) {
                 if (props.items[i].value === hoveredElementValue) {
@@ -59,7 +59,7 @@ export const Select = (props: SelectPropsType) => {
                 <option value="2">Moscow</option>
                 <option value="3">Kiev</option>
             </select>
-            <div className={s.select} onKeyUp={onKeyUp} tabIndex={0}>
+            <div className={s.select} tabIndex={0}>
                 <span className={s.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
                 {
                     isActive && <div className={s.items}>
